@@ -9,13 +9,17 @@ import {
 import { FaCloud, FaCloudSun, FaCloudMoon, FaCloudShowersHeavy, FaSun, FaMoon, FaCloudRain, FaCloudSunRain, FaCloudMoonRain, FaBolt, FaSnowflake, FaSmog } from 'react-icons/fa';
 
 function WeatherDisplay({ weatherData }) {
-  function formatTime(timestamp) {
+  const formatTime = (timestamp) => {
     const date = new Date(timestamp * 1000);
-    const hours = date.getHours();
-    const minutes = `0${date.getMinutes()}`.slice(-2);
-    const seconds = `0${date.getSeconds()}`.slice(-2);
-    return `${hours}:${minutes}:${seconds}`;
-  }
+    const options = {
+      timeZone: 'Asia/Kolkata',
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric',
+      hour12: true,
+    };
+    return date.toLocaleString('en-US', options);
+  };
   const temperatureColor = (temperature) => {
     return temperature > 30 ? '#e74c3c' : '#ffc107'; // Change color based on temperature
   };
