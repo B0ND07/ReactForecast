@@ -15,6 +15,7 @@ function Weather() {
     axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${place}&appid=ac3048e6f359f99002e5352ee2f611ae&units=metric`)
       .then((response) => {
         setWeather([response.data]);
+        console.log(response)
         setError("");
       })
       .catch((error) => {
@@ -30,13 +31,15 @@ function Weather() {
 
   function getPlace() {
     setPlace(city);
+    setCity("")
   }
 
   return (
-    <div>
-      <input value={city} onChange={getCity} type="text"></input>
-      <button onClick={getPlace}>find</button>
-      {error !== "" && <p style={{ color: 'red' }}>{error}</p>}
+    <div className="weather-container">
+      <h1 className="heading">ReactForecast</h1>
+      <input className="input-field" value={city} onChange={getCity} type="text"></input>
+      <button className="find-button" onClick={getPlace}>find</button>
+      {error !== "" && <p className="error-message" style={{ color: 'red' }}>{error}</p>}
       <WeatherDisplay weatherData={weather} />
     </div>
   );
