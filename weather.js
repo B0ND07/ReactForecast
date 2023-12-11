@@ -6,6 +6,7 @@ function Weather() {
   const [weather, setWeather] = useState([]);
   const [city, setCity] = useState("");
   const [place, setPlace] = useState("");
+  const [error, setError] = useState("");
 
   useEffect(() => {
     if (!place) {
@@ -14,6 +15,12 @@ function Weather() {
     axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${place}&appid=ac3048e6f359f99002e5352ee2f611ae&units=metric`)
       .then((response) => {
         setWeather([response.data]);
+        setError("");
+      })
+      .catch((error) => {
+        console.error('Error fetching weather data:', error);
+        setWeather([]);
+        setError('City not found. Please enter a valid city name.'); 
       });
   }, [place]);
 
@@ -29,6 +36,7 @@ function Weather() {
     <div>
       <input value={city} onChange={getCity} type="text"></input>
       <button onClick={getPlace}>find</button>
+      {error !== "" && <p style={{ color: 'red' }}>{error}</p>}
       <WeatherDisplay weatherData={weather} />
     </div>
   );
