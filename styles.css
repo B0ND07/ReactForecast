@@ -54,29 +54,28 @@ body{
     font-weight: bold;
     color: #e67e22;
   }
-
   
   .weather-details p:nth-child(2) {
-    color: #3498db; /* Blue */
+    color: #3498db; 
   }
   
   .weather-details p:nth-child(3) {
-    color: #2ecc71; /* Green */
+    color: #2ecc71; 
   }
   
   .weather-details p:nth-child(4) {
-    color: #f37712; /* Orange */
+    color: #f37712; 
   }
   
   .weather-details p:nth-child(5) {
-    color: #9b59b6; /* Purple */
+    color: #9b59b6; 
   }
   
   .weather-details p:nth-child(6) {
-    color: #bc1a73; /* Turquoise */
+    color: #bc1a73; 
   }
   .weather-details p:nth-child(7) {
-    color: rgb(43, 133, 250); /* Turquoise */
+    color: rgb(43, 133, 250); 
   }
   .heading{
     color: rgb(80, 20, 220);

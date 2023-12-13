@@ -21,7 +21,7 @@ function WeatherDisplay({ weatherData }) {
     return date.toLocaleString('en-US', options);
   };
   const temperatureColor = (temperature) => {
-    return temperature > 30 ? '#e74c3c' : '#ffc107'; // Change color based on temperature
+    return temperature > 30 ? '#e74c3c' : '#ffc107'; 
   };
 
   const getWeatherIcon = (iconCode) => {

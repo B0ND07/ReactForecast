@@ -30,6 +30,8 @@ To get started with this project, follow these steps:
    - npm install
    - npm start
 
+---
+
 ## Usage
 
 - Enter a city name in the input field.
